@@ -15,7 +15,7 @@ import re
 r = stdin.readline
 
 def is_valid_email( string ):
-    valid_pattern = "^[a-zA-Z0-9-_]{1,}@[a-zA-Z0-9]{,}\.[a-z]{,3}$"
+    valid_pattern = "^[a-zA-Z0-9-_]{1,}@[a-zA-Z0-9]{1,}\.[a-z]{,3}$"
     validQ = bool( re.search( valid_pattern, string  ))
     assert type(validQ) is bool
     return validQ
