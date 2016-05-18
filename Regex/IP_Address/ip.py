@@ -19,14 +19,17 @@ r = stdin.readline
 
 def is_IPv4( string ):
     """ Test for IPv4 address"""
-    ipv4_pattern = "^[0-9]|1[0-9]{,2}|2[0-5]{,2}[:]*"
+    ipv4_pattern = "^(?:[0-9]{,2}\.|1[0-9]{,2}\.|2[0-5]{,2}[\.]*){,4}$"
     ipv4 = bool( re.search( ipv4_pattern, string  ))
     assert type(ipv4) is bool
     return ipv4
 
 def is_IPv6( string):
     """ Test for IPv6 address"""
-    return False
+    ipv6_pattern = "^(?:[a-f0-9]{1,4}:){7}[a-f0-9]{1,4}$"
+    ipv6 = bool( re.search( ipv6_pattern, string ))
+    assert type(ipv6) is bool
+    return ipv6
 
 def main():
     num_cases = int( r().strip() )
@@ -45,4 +48,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
